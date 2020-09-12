@@ -1,0 +1,59 @@
+* {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+[v-cloak] {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s;
+}
+
+section {
+  padding: 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: map_get($grid-breakpoints, md)) {
+    padding: 5rem 0;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+.smaller {
+  font-size: 90%;
+}
+
+.turbolinks-progress-bar {
+  background-color: $gold;
+}
+
+.form-control {
+  border: none;
+}

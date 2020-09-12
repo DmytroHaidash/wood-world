@@ -1,0 +1,38 @@
+#app-footer {
+  color: $headings-color;
+  background-color: $dark;
+
+  a {
+    color: currentColor;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+
+.footer-logo {
+  a {
+    figure {
+      width: 165px;
+      height: 68px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}
+
+.footer-info {
+  padding: 60px 0;
+}
+
+.copyrights {
+  background-color: $primary;
+  font-size: rem-calc(14);
+  color: #858585;
+}
+
+.subscription-form {
+  max-width: 450px;
+}

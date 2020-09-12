@@ -1,0 +1,24 @@
+.appointment {
+	padding: 100px 0px;
+	margin-bottom: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	position: relative;
+	height: 100px;
+	@media (min-width: map_get($grid-breakpoints, xl)) {
+		padding: 85px;
+	}
+
+
+
+	h2 {
+		color: #fff;
+		margin-bottom: 20px;
+		&:hover{
+			color: lighten($secondary, 10%);
+		}
+	}
+
+}

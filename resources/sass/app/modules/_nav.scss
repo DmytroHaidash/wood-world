@@ -1,0 +1,118 @@
+//.menu {
+//  position: fixed;
+//  left: 0;
+//  right: 0;
+//  top: 0;
+//  bottom: 0;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  text-align: center;
+//  z-index: 500;
+//  background-color: $primary;
+//  font-size: 1rem;
+//  list-style: none;
+//  margin: 0;
+//
+//  transition: 0.5s;
+//  transform: translateY(-100%);
+//  pointer-events: none;
+//
+//
+//  &.is-active {
+//    transform: translateY(0);
+//    pointer-events: auto;
+//  }
+//
+//  @media (min-width: map_get($grid-breakpoints, lg)) {
+//    position: static;
+//    flex-direction: row;
+//    transform: translateY(0);
+//    pointer-events: auto;
+//  }
+//}
+
+.menu-toggle {
+  font-size: rem-calc(28);
+  line-height: 1.25;
+}
+
+.menu-close {
+  position: absolute;
+  right: $grid-gutter-width / 2;
+  top: $grid-gutter-width / 2;
+  cursor: pointer;
+}
+
+#app-header {
+  .nav {
+    font-size: rem-calc(13);
+    text-transform: uppercase;
+    position: relative;
+
+    &-item {
+      height: 75px;
+
+      @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 0 10px;
+      }
+
+      &:hover {
+        background-color: lighten($primary, 10%);
+      }
+    }
+
+    &-link {
+      padding: 0 rem-calc(15);
+      line-height: 1.05;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      font-size: 14px;
+
+      &[data-search] {
+        width: 75px;
+        text-align: center;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .navbar {
+    padding: 15px 0;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      padding: 0;
+    }
+
+    &--center {
+
+      @media (min-width: map_get($grid-breakpoints, xl)) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &--left {
+      background-color: $primary;
+      color: #fff;
+
+      a {
+        color: currentColor;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+
+    &--right {
+      padding-right: 0;
+      line-height: 1.25;
+    }
+  }
+}

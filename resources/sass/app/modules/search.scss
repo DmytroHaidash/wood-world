@@ -1,0 +1,56 @@
+.search {
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 600;
+
+  @media (min-width: map_get($grid-breakpoints, lg)) {
+    position: absolute !important;
+  }
+
+  .material-icons {
+    position: absolute;
+    left: rem-calc(10);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.form-control--search {
+  background-color: $gray-200;
+  padding-left: 40px;
+  border: none !important;
+}
+
+.form-control--global-search {
+  background-color: $primary !important;
+  border-color: transparent;
+  padding-left: 40px;
+  height: 75px;
+}
+
+.nav {
+  .search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    color: $body-color;
+    transform: scaleY(-1);
+    transform-origin: center top;
+    transition: 0.65s;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      top: 0;
+    }
+
+    &.is-visible {
+      transform: scale(1);
+      width: 100%;
+    }
+
+    .form-control {
+      color: $body-color;
+      font-family: $font-family-base;
+    }
+  }
+}

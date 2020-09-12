@@ -1,0 +1,86 @@
+#app-header {
+  position: relative;
+  font-family: $headings-font-family;
+  font-size: rem-calc(14);
+  z-index: 100;
+
+  @media (min-width: map_get($grid-breakpoints, lg)) {
+    height: 75px;
+  }
+
+  .nav-search-icon {
+    position: relative;
+    z-index: 800;
+  }
+
+  .container-fluid--header {
+    max-width: 100%;
+    padding-left: $grid-gutter-width;
+  }
+
+  .navbar {
+    background-color: transparent !important;
+    width: 100%;
+
+    .menu {
+      background-color: $primary;
+    }
+  }
+
+  .nav-link {
+    padding: 0 0.5rem !important;
+  }
+
+  &.is-light {
+    a {
+      color: #fff;
+
+      &:hover {
+        color: $gold;
+      }
+    }
+  }
+
+  &.is-fixed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .breadcrumbs {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: $body-color;
+    padding: rem-calc(8) rem-calc(20);
+  }
+}
+
+.nav-link {
+  &--logo {
+    transition: 0.5s;
+    svg {
+      fill: #fff;
+    }
+
+    &:hover {
+      svg {
+        fill: $gold;
+      }
+    }
+  }
+}
+
+.container-fluid {
+  &--header {
+    max-width: 1600px;
+    padding-left: 0;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+      padding-left: $grid-gutter-width;
+      padding-right: $grid-gutter-width;
+    }
+  }
+}
