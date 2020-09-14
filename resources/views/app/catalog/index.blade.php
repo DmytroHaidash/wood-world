@@ -31,33 +31,34 @@
 
                 {{--@include('partials.app.catalog.search')--}}
                 @include('partials.app.catalog.filters')
-                <div class="row">
-                    @forelse($products as $product)
-                        <div class="col-md-6 col-lg-4">
-                            @include('partials.app.catalog.preview')
-                        </div>
-                    @empty
-                        @lang('pages.catalog.not_found')
-                    @endforelse
-                </div>
-
-                <div class="d-flex mt-4">
-                    {{ $products->appends(request()->except('page'))->links() }}
-                    <div class="ml-auto">
-                        <a href="{{ route('app.catalog.index') }}" class="btn btn-primary ml-3">
-                            {{--<i class="material-icons mr-3">all_inclusive</i>--}}
-                            @if(request()->filled('category'))
-                                @lang('pages.catalog.filter.clear')
-                            @else
-                                @lang('pages.catalog.all')
-                            @endif
-                        </a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                @forelse($products as $product)
+                    <div class="col-md-6 col-lg-4">
+                        @include('partials.app.catalog.preview')
                     </div>
+                @empty
+                    @lang('pages.catalog.not_found')
+                @endforelse
+            </div>
+
+            <div class="d-flex mt-4">
+                {{ $products->appends(request()->except('page'))->links() }}
+                <div class="ml-auto">
+                    <a href="{{ route('app.catalog.index') }}" class="btn btn-primary ml-3">
+                        {{--<i class="material-icons mr-3">all_inclusive</i>--}}
+                        @if(request()->filled('category'))
+                            @lang('pages.catalog.filter.clear')
+                        @else
+                            @lang('pages.catalog.all')
+                        @endif
+                    </a>
                 </div>
             </div>
-            {{--</div>
-        </div>--}}
         </div>
+
     </section>
 
 @endsection

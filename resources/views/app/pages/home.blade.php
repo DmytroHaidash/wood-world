@@ -10,7 +10,7 @@
            style="background-image: url(../images/about-2.jpg)">
             <h2 class="appointment__title">@lang('pages.product.popular')</h2>
         </a>
-        <div class="container mt-4">
+        <div class="container-fluid mt-4">
             <div class="row justify-content-center">
                 @foreach($popular as $item)
                     <div class="col-md-6 col-lg-3">
