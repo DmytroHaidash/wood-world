@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <div class="text-white">
+                    <div>
                         <p class="lead">{{ $product->translate('description') }}</p>
                         {!! $product->body !!}
 
