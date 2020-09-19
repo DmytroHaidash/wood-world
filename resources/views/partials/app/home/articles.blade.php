@@ -15,7 +15,7 @@
                         <figure class="category__image mb-3 lozad"
                                 data-background-image="{{ $article->preview }}"></figure>
 
-                        <h5 class="mb-0 text-center">{{ $article->translate('title') }}</h5>
+                        <h5 class="mb-0 text-center font-weight-bold">{{ $article->translate('title') }}</h5>
                     </a>
                     {{--<article class=" py-4 {{ $loop->index == 0 ? 'is-active' : '' }}"
                              tabindex="{{ $loop->iteration }}" data-image="{{ $article->banner }}">

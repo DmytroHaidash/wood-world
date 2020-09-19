@@ -22,7 +22,7 @@
                             <figure class="category__image mb-3 lozad"
                                     data-background-image="{{ $category->preview }}"></figure>
 
-                            <h5 class="mb-0 text-center">{{ $category->translate('title') }}</h5>
+                            <h5 class="mb-0 text-center font-weight-bold">{{ $category->translate('title') }}</h5>
                         </a>
                     </div>
                 @endif
