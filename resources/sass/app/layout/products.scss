@@ -24,10 +24,10 @@
     position: relative;
     z-index: 10;
     background-color: #fff;
-    color: $dark;
+    color: $body-color;
 
     h5 {
-      color: $dark;
+      color: $body-color;
     }
   }
 
@@ -40,7 +40,7 @@
   }
 
   &:hover {
-    box-shadow: 0 5px 60px -20px rgba($primary, 0.25);
+    box-shadow: 0 5px 60px -20px rgba($gold, 0.25);
     .product-preview__image {
       transform: scale(1.05);
     }

@@ -1,4 +1,4 @@
-<section id="categories">
+<div id="categories">
     <div class="container-fluid">
  {{--       <h2 class="h1 text-center mb-5">
             @lang('pages.home.categories.title')
@@ -35,4 +35,4 @@
             </a>
         </div>
     </div>
-</section>
+</div>

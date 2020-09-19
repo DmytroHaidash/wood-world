@@ -13,9 +13,12 @@
 
 
 
+
+
 	h2 {
 		color: #fff;
 		margin-bottom: 20px;
+		font-weight: bold;
 		&:hover{
 			color: lighten($secondary, 10%);
 		}
