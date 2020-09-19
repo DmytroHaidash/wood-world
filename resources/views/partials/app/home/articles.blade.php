@@ -1,7 +1,7 @@
 <section id="articles" class="mt-4">
     <a href="{{  route('app.articles.index') }}"
        class="appointment d-flex flex-column align-items-center justify-content-center"
-       style="background-image: url(../images/about-2.jpg)">
+       style="background-image: url(../images/flow.jpg)">
         <h2 class="appointment__title">@lang('pages.articles.title')</h2>
     </a>
     {{-- <figure class="tabs-image d-none d-md-block lozad"
