@@ -7,7 +7,7 @@
     @include('partials.app.home.about')
     @if ($popular->count())
         <a href="{{ route('app.catalog.index') }}" class="appointment d-flex flex-column align-items-center justify-content-center mt-4"
-           style="background-image: url(../images/about-2.jpg)">
+           style="background-image: url(../images/flow.jpg)">
             <h2 class="appointment__title">@lang('pages.product.popular')</h2>
         </a>
         <div class="container-fluid mt-4">
