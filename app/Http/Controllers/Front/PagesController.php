@@ -20,7 +20,8 @@ class PagesController extends Controller
         $categories = Category::has('products')->inRandomOrder()->take(5)->get();
         $about = Page::where('slug', 'about')->first();
         $popular = Product::orderByDesc('views_count')->take(4)->get();
-        return \view('app.pages.home', compact('articles', 'slides', 'categories', 'about', 'popular'));
+        $meta = Page::where('slug', 'about')->first();
+        return \view('app.pages.home', compact('articles', 'slides', 'categories', 'about', 'popular', 'meta'));
     }
 
     public function show(Page $page): View

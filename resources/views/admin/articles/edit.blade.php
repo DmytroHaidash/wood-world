@@ -61,7 +61,7 @@
                         </div>
                     @endif
                 </div>
-
+                    @includeIf('partials.admin.meta', ['meta' => $article->meta()->first()])
                 <div class="col">
                     <image-uploader src="{{ $article->getFirstMediaUrl('articles') }}"></image-uploader>
                 </div>

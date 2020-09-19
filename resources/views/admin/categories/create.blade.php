@@ -25,7 +25,7 @@
                         @endforeach
                     </block-editor>
                 </div>
-
+                @includeIf('partials.admin.meta', ['meta' => null])
                 <div class="col-md">
                     <image-uploader></image-uploader>
                 </div>

@@ -5,7 +5,7 @@ return [
         'home' => 'Головна',
         'catalog' => 'Каталог',
         'articles' => 'Блог',
-        'about' => '<nobr>Про проект</nobr>',
+        'about' => '<nobr>Про нас</nobr>',
         'contacts' => 'Контакти',
         'questionary' => 'Анкета',
         'dashboard' => 'Панель управління',

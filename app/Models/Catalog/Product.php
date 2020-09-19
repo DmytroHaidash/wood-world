@@ -4,6 +4,7 @@ namespace App\Models\Catalog;
 
 use App\Http\Resources\ImageResource;
 use App\Models\Additional\Favorite;
+use App\Models\Service\Meta;
 use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -59,6 +60,14 @@ class Product extends Model implements HasMedia, Sortable
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
+    }
+
+    /**
+     * @return MorphMany
+     */
+    public function meta(): MorphMany
+    {
+        return $this->morphMany(Meta::class, 'metable');
     }
 
     public function accountings():HasOne

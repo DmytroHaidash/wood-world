@@ -58,7 +58,7 @@
                         </div>
                     @endif
                 </div>
-
+                    @includeIf('partials.admin.meta', ['meta' => null])
                 <div class="col">
                     <image-uploader></image-uploader>
                 </div>

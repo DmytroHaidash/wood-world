@@ -24,4 +24,12 @@ class Page extends Model implements HasMedia
 		'slug',
 		'props',
 	];
+
+    /**
+     * @return MorphMany
+     */
+    public function meta(): MorphMany
+    {
+        return $this->morphMany(Meta::class, 'metable');
+    }
 }

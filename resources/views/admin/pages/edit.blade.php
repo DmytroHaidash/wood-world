@@ -29,6 +29,7 @@
                             </fieldset>
                         @endforeach
                     </block-editor>
+                    @includeIf('partials.admin.meta', ['meta' => $page->meta()->first()])
                 </div>
                 <div class="col">
                     <image-uploader src="{{ $page->getFirstMediaUrl('pages') }}"></image-uploader>
