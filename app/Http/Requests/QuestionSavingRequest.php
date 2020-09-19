@@ -24,7 +24,7 @@ class QuestionSavingRequest extends FormRequest
     public function rules()
     {
         return [
-            'ru.title' => 'required',
+            'uk.title' => 'required',
 
         ];
     }

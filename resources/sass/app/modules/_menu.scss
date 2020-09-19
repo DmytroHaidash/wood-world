@@ -46,7 +46,7 @@
     .line {
         width: 30px;
         height: 8px;
-        border: 2px solid #fff;
+        border: 2px solid $headings-color;
         margin-bottom: 4px;
         visibility: visible;
         transition: .7s;
@@ -59,7 +59,7 @@
             perspective: 1000px;
             width: 30px;
             height: 5px;
-            background: #fff;
+            background: $headings-color;
             opacity: 0;
             transition: .7s;
         }
@@ -83,7 +83,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: $dark;
+    background: $primary;
     transition: .5s;
     transform: translateX(101%);
 

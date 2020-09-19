@@ -6,7 +6,7 @@
                 <a href="{{ url('/') }}"
                    class="header-logo">
                     {{--<figure style="background-image: url(../images/logo-white.png)"></figure>--}}
-                    <svg width="100" height="80">
+                    <svg width="100" height="100">
                         <use xlink:href="#logo"></use>
                     </svg>
                 </a>

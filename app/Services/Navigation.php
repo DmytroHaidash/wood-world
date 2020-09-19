@@ -67,6 +67,10 @@ class Navigation
                 'route' => url('/contacts'),
             ],
             (object)[
+                'name' => trans('navigation.header.warranty'),
+                'route' => url('/payment-and-delivery')
+            ],
+            (object)[
                 'name' => trans('navigation.header.terms'),
                 'route' => url('terms-and-conditions')
             ]
