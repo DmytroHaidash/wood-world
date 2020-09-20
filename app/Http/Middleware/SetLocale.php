@@ -15,7 +15,7 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-		/*if (session()->has('locale')) {
+		if (session()->has('locale')) {
 			$locale = session()->get('locale', config('app.locale'));
 		} else {
 			$locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
@@ -37,9 +37,9 @@ class SetLocale
 
         if (app()->getLocale() === 'uk') {
             setlocale(LC_TIME, 'uk_UA.utf-8');
-        }*/
+        }
 
-        $locale = 'uk';
+      /*  $locale = 'uk';
 
         session()->put('locale', $locale);
         app()->setLocale($locale);
@@ -48,7 +48,7 @@ class SetLocale
             setlocale(LC_TIME, 'ru_RU.utf-8');
         } elseif (app()->getLocale() === 'uk') {
             setlocale(LC_TIME, 'uk_UA.utf-8');
-        }
+        }*/
 		return $next($request);
     }
 }

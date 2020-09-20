@@ -22,14 +22,14 @@
 
             <div class="col-auto">
                 <div class="locale-selector  align-items-center">
-                    {{--@foreach(config('app.locales') as $locale)
+                    @foreach(config('app.locales') as $locale)
                         @if (app()->getLocale() === $locale)
                             <span class="locale-selector__item is-active">{{ $locale }}</span>
                         @else
                             <a href="{{ route('app.locale', [$locale]) }}"
                                class="locale-selector__item">{{ $locale }}</a>
                         @endif
-                    @endforeach--}}
+                    @endforeach
                     <a href="#search" class="material-icons nav-link nav-search-icon" data-search>search</a>
                 </div>
             </div>
