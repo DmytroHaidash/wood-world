@@ -7,7 +7,7 @@
                 <h5 class="mb-1">{{ $product->translate('title') }}</h5>
             </div>
 
-            <h6 class="mb-0 text-primary">
+            <h6 class="mb-0 text-secondary">
                 {{ $product->price }}
                 <small class="text-uppercase currency">
                     @lang('common.currency')

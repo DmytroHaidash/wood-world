@@ -23,11 +23,11 @@ class ArticlesTableSeeder extends Seeder
                     'title' => ucfirst($faker->words(rand(3, 8), true)),
                     'body' => '<p>' . implode('</p><p>', $faker->sentences(rand(10, 15))) . '</p>',
                 ],
-				'ru' => [
+				/*'ru' => [
 					'title' => ucfirst($faker->words(rand(3, 8), true)),
 					'body' => '<p>' . implode('</p><p>', $faker->sentences(rand(10, 15))) . '</p>',
-				],
-				'uk' => [
+				],*/
+				'en' => [
 					'title' => ucfirst($faker->words(rand(3, 8), true)),
 					'body' => '<p>' . implode('</p><p>', $faker->sentences(rand(10, 15))) . '</p>',
 				],

@@ -20,20 +20,20 @@ class SetLocale
 		} else {
 			$locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
 
-			if ($locale !== 'ru' && $locale !== 'uk') {
-				$locale = 'ru';
+			if ($locale !== 'en' && $locale !== 'uk') {
+				$locale = 'en';
 			}
 		}
 
 		if (app('router')->currentRouteNamed('admin.*')) {
-			app()->setLocale('ru');
+			app()->setLocale('uk');
 		} else {
 			app()->setLocale($locale);
 		}
 
-		if (app()->getLocale() === 'ru') {
+		/*if (app()->getLocale() === 'ru') {
 			setlocale(LC_TIME, 'ru_RU.utf-8');
-		}
+		}*/
 
         if (app()->getLocale() === 'uk') {
             setlocale(LC_TIME, 'uk_UA.utf-8');

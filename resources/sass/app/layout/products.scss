@@ -23,11 +23,11 @@
     justify-content: space-between;
     position: relative;
     z-index: 10;
-    background-color: #fff;
+    background-color: $light-dark;
     color: $body-color;
 
     h5 {
-      color: $body-color;
+      color: $secondary;
     }
   }
 

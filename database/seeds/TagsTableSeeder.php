@@ -20,8 +20,7 @@ class TagsTableSeeder extends Seeder
             for ($i = rand(3, 6); $i; $i--) {
                 $data = [
                     'uk' => ['title' => ucfirst($faker->words(rand(2, 3), true))],
-                    'ru' => ['title' => ucfirst($faker->words(rand(2, 3), true))],
-                    'uk' => ['title' => ucfirst($faker->words(rand(2, 3), true))],
+                    'en' => ['title' => ucfirst($faker->words(rand(2, 3), true))],
                 ];
 
                 $slug = SlugService::createSlug(Tag::class, 'slug', $data['uk']['title']);
