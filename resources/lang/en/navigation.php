@@ -10,6 +10,7 @@ return [
 		'questionary' => 'Questionary',
 		'dashboard' => 'Dashboard',
 		'terms' => 'Terms And<br>Conditions',
+        'warranty' => "Paymet and Delivery"
 	],
 
 	'profile' => [
