@@ -1,13 +1,13 @@
 <footer id="app-footer">
     <div class="container">
-        <div class="d-md-flex align-items-center mt-5">
-            <div class="footer-logo">
+        <div class="d-md-flex align-items-center footer-info">
+            <div class="footer-logo pr-5">
                 <a href="{{ url('/') }}" class="nav-link nav-link--logo">
                     <figure style="background-image: url(../images/logo-1.png)"></figure>
                 </a>
             </div>
-        </div>
-        <div class="d-md-flex align-items-center footer-info">
+            <!--        </div>
+                    <div class="d-md-flex align-items-center footer-info">-->
             <div class="flex-grow-1">
                 <nav class="row font-weight-bold mb-5">
                     @foreach(app('nav')->frontendFooter() as $item)

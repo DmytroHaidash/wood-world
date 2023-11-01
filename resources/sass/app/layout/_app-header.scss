@@ -155,12 +155,12 @@
 
     figure {
         width: 185px;
-        height: 16px;
+        height: 50px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
 
-        @media (min-width: map_get($grid-breakpoints, sm)) {
+        /*@media (min-width: map_get($grid-breakpoints, sm)) {
             width: 250px;
             height: 22px;
         }
@@ -168,7 +168,7 @@
         @media (min-width: map_get($grid-breakpoints, lg)) {
             width: 500px;
             height: 40px;
-        }
+        }*/
     }
 }
 .nav-search-icon{

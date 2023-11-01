@@ -15,13 +15,13 @@
   a {
     figure {
       margin-left: 8%;
-      width: 70vw;
-      height: 20px;
+      width: 165px;
+      height: 68px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
 
-      @media (min-width: map_get($grid-breakpoints, sm)) {
+      /*@media (min-width: map_get($grid-breakpoints, sm)) {
         margin-left: 20%;
         width: 60vw;
         height: 40px;
@@ -31,7 +31,7 @@
         margin-left: 25%;
         width: 50vw;
         height: 70px;
-      }
+      }*/
     }
   }
 }
