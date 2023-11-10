@@ -17,6 +17,14 @@
     <link rel="preload" href="{{ asset('js/app.js') }}" as="script">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11083041713"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11083041713');
+    </script>
     @stack('styles')
     @yield('meta')
 </head>
