@@ -68,15 +68,23 @@ class Category extends Model implements HasMedia, Sortable
 			 ->sharpen(10);
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getPreviewAttribute(): string
-	{
-		return $this->hasMedia('category')
-			? $this->getFirstMedia('category')->getFullUrl('preview')
-			: asset('images/no-image.png');
-	}
+    /**
+     * @return string
+     */
+    public function getPreviewAttribute(): string
+    {
+        return $this->hasMedia('category')
+            ? $this->getFirstMedia('category')->getFullUrl('preview')
+            : asset('images/no-image.png');
+    }
+
+    public function getFullAttribute(): string
+    {
+        return $this->hasMedia('category')
+            ? $this->getFirstMedia('category')->getFullUrl()
+            : asset('images/no-image.png');
+    }
+
     protected static function boot()
     {
         parent::boot();
