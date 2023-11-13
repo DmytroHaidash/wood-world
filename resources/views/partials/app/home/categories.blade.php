@@ -1,16 +1,17 @@
 <div id="categories">
     <div class="container-fluid">
- {{--       <h2 class="h1 text-center mb-5">
-            @lang('pages.home.categories.title')
-        </h2>
---}}
+        {{--       <h2 class="h1 text-center mb-5">
+                   @lang('pages.home.categories.title')
+               </h2>
+       --}}
         <div class="row no-gutters categories">
             @foreach($categories as $category)
                 @if($loop->first || $loop->iteration == 2)
                     <div class="col-lg-6">
-                        <a href="{{ route('app.catalog.index', ['category' => $category->slug]) }}" class="category category--large">
+                        <a href="{{ route('app.catalog.index', ['category' => $category->slug]) }}"
+                           class="category category--large">
                             <figure class="category__image mb-3 lozad"
-                                    data-background-image="{{ $category->preview }}"></figure>
+                                    data-background-image="{{ $category->full }}"></figure>
 
                             <h5 class="mb-0 text-center">{{ $category->translate('title') }}</h5>
                         </a>
