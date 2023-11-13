@@ -1,5 +1,5 @@
 <header id="app-header">
-    <div class="container-fluid">
+    <div class="container-fluid--header">
 
         <div class="row align-items-center">
             <div class="col-auto">

@@ -26,13 +26,9 @@ main {
 }
 
 section {
-  padding: 2.5rem 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
-
-  @media (min-width: map_get($grid-breakpoints, md)) {
-    padding: 5rem 0;
-  }
 }
 
 figure {

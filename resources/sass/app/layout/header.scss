@@ -77,6 +77,7 @@
   &--header {
     max-width: 1600px;
     padding-left: 0;
+    padding-right: 0;
 
     @media (min-width: map_get($grid-breakpoints, lg)) {
       padding-left: $grid-gutter-width;
