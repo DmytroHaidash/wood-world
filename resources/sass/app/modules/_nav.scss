@@ -73,9 +73,11 @@
       font-size: 14px;
 
       &[data-search] {
-        width: 75px;
         text-align: center;
         font-size: 25px;
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+          width: 75px;
+        }
       }
     }
   }
