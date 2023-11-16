@@ -18,7 +18,7 @@
                         <article class="mb-4">
                             <a href="{{ route('app.catalog.show', $item) }}" class="product-preview">
                                 <figure class="product-preview__image-home lozad"
-                                        data-background-image="{{ $item->preview }}"></figure>
+                                        data-background-image="{{ $item->image }}"></figure>
                                 <div class="product-preview__info p-3">
                                     <div class="mb-auto">
                                         <h5 class="mb-1">{{ $item->translate('title') }}</h5>
