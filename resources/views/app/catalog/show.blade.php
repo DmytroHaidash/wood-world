@@ -50,11 +50,19 @@
                 <div class="col-md-6 pl-md-4">
                     <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-end mb-4">
                         <div>
-                            <h4 class="price mt-4">
-                                <small class="text-muted">@lang('pages.product.price'):</small>
-                                {{ number_format($product->price, 0, ',', ' ') }}
-                                @lang('common.currency')
-                            </h4>
+                            @if(app()->getLocale() == 'en')
+                                <h4 class="price mt-4">
+                                    <small class="text-muted">@lang('pages.product.price'):</small>
+                                    {{ number_format($product->price_usd, 0, ',', ' ') }}
+                                    USD
+                                </h4>
+                            @else
+                                <h4 class="price mt-4">
+                                    <small class="text-muted">@lang('pages.product.price'):</small>
+                                    {{ number_format($product->price, 0, ',', ' ') }}
+                                    @lang('common.currency')
+                                </h4>
+                            @endif
                         </div>
 
                         <div class="ml-sm-auto text-right">

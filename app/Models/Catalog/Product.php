@@ -36,6 +36,7 @@ class Product extends Model implements HasMedia, Sortable
     protected $fillable = [
         'slug',
         'price',
+        'price_usd',
         'is_published',
         'views_count',
         'in_stock',

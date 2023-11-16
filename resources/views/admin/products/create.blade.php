@@ -42,7 +42,7 @@
 
                 <div class="col-lg-3">
                     <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}">
-                        <label for="price">Цена</label>
+                        <label for="price">Цена ГРН</label>
                         <input type="number" min="0.01" step="0.01" class="form-control" id="price" name="price"
                                value="{{ old('price') }}" required>
                         @if($errors->has('price'))
@@ -51,7 +51,16 @@
                             </div>
                         @endif
                     </div>
-
+                    <div class="form-group{{ $errors->has('price_usd') ? ' is-invalid' : '' }}">
+                        <label for="price_usd">Цена USD</label>
+                        <input type="number" min="0.01" step="0.01" class="form-control" id="price_usd" name="price_usd"
+                               value="{{ old('price_usd') }}" required>
+                        @if($errors->has('price_usd'))
+                            <div class="mt-1 text-danger">
+                                {{ $errors->first('price_usd') }}
+                            </div>
+                        @endif
+                    </div>
                     <div class="form-group">
                         @if ($categories->count())
                             <label>Категории</label>

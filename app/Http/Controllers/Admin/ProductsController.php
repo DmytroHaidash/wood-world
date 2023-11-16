@@ -72,6 +72,7 @@ class ProductsController extends Controller
         /** @var Product $product */
         $product = Product::create([
             'price' => $request->input('price'),
+            'price_usd' => $request->input('price_usd'),
             'is_published' => $request->has('is_published'),
             'in_stock' => $request->has('in_stock')
         ]);
@@ -149,6 +150,7 @@ class ProductsController extends Controller
         $product->categories()->sync($request->input('categories'));
         $product->update([
             'price' => $request->input('price'),
+            'price_usd' => $request->input('price_usd'),
             'is_published' => $request->has('is_published'),
             'in_stock' => $request->has('in_stock')
         ]);

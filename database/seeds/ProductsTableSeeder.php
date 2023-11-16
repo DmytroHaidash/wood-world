@@ -38,9 +38,10 @@ class ProductsTableSeeder extends Seeder
 
 			/** @var \App\Models\Catalog\Product $product */
 			$product = \App\Models\Catalog\Product::create([
-				'slug' => $slug,
-				'price' => rand(500, 1500),
-			]);
+                'slug' => $slug,
+                'price' => rand(500, 1500),
+                'price_usd' => rand(500, 1500),
+            ]);
 
 			foreach (config('app.locales') as $lang) {
 				$product->translates()->create([

@@ -13,8 +13,9 @@ return [
 	],
 
 	'about' => [
-		'title' => 'About us',
-	],
+        'title' => 'About us',
+        'button' => 'More',
+    ],
 
 	'contacts' => [
 		'title' => 'Contacts',

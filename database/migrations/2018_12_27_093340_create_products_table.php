@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('slug');
             $table->float('price');
+            $table->float('price_usd');
             $table->boolean('is_published')->default(1);
 			$table->integer('views_count')->default(0);
             $table->timestamps();

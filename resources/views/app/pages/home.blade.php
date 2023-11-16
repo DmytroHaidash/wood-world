@@ -6,7 +6,8 @@
     @includeWhen($categories->count(), 'partials.app.home.categories')
     @include('partials.app.home.about')
     @if ($popular->count())
-        <a href="{{ route('app.catalog.index') }}" class="appointment d-flex flex-column align-items-center justify-content-center mt-4"
+        <a href="{{ route('app.catalog.index') }}"
+           class="appointment d-flex flex-column align-items-center justify-content-center mt-4"
            style="background-image: url(../images/flow.jpg)">
             <h2 class="appointment__title">@lang('pages.product.popular')</h2>
         </a>
@@ -22,13 +23,21 @@
                                     <div class="mb-auto">
                                         <h5 class="mb-1">{{ $item->translate('title') }}</h5>
                                     </div>
-
-                                    <h6 class="mb-0">
-                                        {{ $item->price }}
-                                        <small class="text-uppercase currency">
-                                            @lang('common.currency')
-                                        </small>
-                                    </h6>
+                                    @if(app()->getLocale() == 'en')
+                                        <h6 class="mb-0">
+                                            {{ $item->price_usd }}
+                                            <small class="text-uppercase currency">
+                                                USD
+                                            </small>
+                                        </h6>
+                                    @else
+                                        <h6 class="mb-0">
+                                            {{ $item->price }}
+                                            <small class="text-uppercase currency">
+                                                @lang('common.currency')
+                                            </small>
+                                        </h6>
+                                    @endif
                                 </div>
                             </a>
                         </article>
