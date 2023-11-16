@@ -155,6 +155,12 @@ class Product extends Model implements HasMedia, Sortable
             : asset('images/no-image.png');
     }
 
+    public function getImageAttribute(): string
+    {
+        return $this->hasMedia('uploads')
+            ? $this->getFirstMedia('uploads')->getFullUrl()
+            : asset('images/no-image.png');
+    }
     /**
      * @return string
      */
