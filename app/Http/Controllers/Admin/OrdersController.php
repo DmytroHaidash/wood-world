@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Catalog\Order;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+
 
 class OrdersController extends Controller
 {
@@ -26,4 +28,10 @@ class OrdersController extends Controller
 		$order->update($request->only('status', 'message', 'comment'));
 		return \back();
 	}
+    
+    public function destroy(Order $order): RedirectResponse
+    {
+        $order->delete();
+        return redirect()->route('admin.orders.index');
+    }
 }
