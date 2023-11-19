@@ -31,7 +31,7 @@ Route::group([
     Route::resource('categories', 'CategoriesController')->except(['show']);
     Route::post('categories/order/{category}/{direction}', 'CategoriesController@sortOrder')
         ->name('categories.sort');
-    Route::resource('orders', 'OrdersController')->except(['create', 'destroy']);
+    Route::resource('orders', 'OrdersController')->except(['create']);
 
     Route::resource('users', 'UsersController');
 

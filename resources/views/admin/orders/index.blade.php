@@ -94,11 +94,15 @@
                         </select>
                     </td>
                     <td width="150">{{ $order->created_at->formatLocalized('%d %b %Y, %H:%M') }}</td>
-                    <td width="50">
+                    <td width="100">
                         <a href="{{ route('admin.orders.edit', $order) }}"
                            class="btn btn-warning btn-squire">
                             <i class="i-pencil"></i>
                         </a>
+                           <button class="btn btn-danger btn-squire"
+                                onclick="deleteItem('{{ route('admin.orders.destroy', $order) }}')">
+                            <i class="i-trash"></i>
+                        </button>
                     </td>
                 </tr>
             @empty
@@ -128,6 +132,25 @@
         form.setAttribute('action', route);
         form.querySelector('[name="status"]').value = event.target.value;
         form.submit();
+      }
+    </script>
+@endpush
+
+@push('scripts')
+    <form method="post" id="delete" style="display: none">
+        @csrf
+        @method('delete')
+    </form>
+
+    <script>
+      function deleteItem(route) {
+        const form = document.getElementById('delete');
+        const conf = confirm('Уверены?');
+
+        if (conf) {
+          form.action = route;
+          form.submit();
+        }
       }
     </script>
 @endpush

@@ -7,7 +7,7 @@
 
 <h4>Товар:</h4>
 <p>
-    <a href="{{ route('client.catalog.show', $order->product) }}" target="_blank">{{ $order->product->title }}</a>
+    <a href="{{ route('app.catalog.show', $order->product) }}" target="_blank">{{ $order->product->title }}</a>
 </p>
 
 @if ($order->message)
