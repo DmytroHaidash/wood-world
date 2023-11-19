@@ -41,8 +41,14 @@
                 </div>
             </div>
 
-            <div class="mt-3">
+            <div class="d-flex align-items-center mt-4">
                 <button class="btn btn-primary">Сохранить</button>
+                <div class="custom-control custom-checkbox ml-3">
+                    <input type="checkbox" class="custom-control-input"
+                           id="published" name="is_published"
+                            {{ $category->is_published ? 'checked' : '' }}>
+                    <label class="custom-control-label" for="published">Опубликовать</label>
+                </div>
             </div>
         </form>
     </section>

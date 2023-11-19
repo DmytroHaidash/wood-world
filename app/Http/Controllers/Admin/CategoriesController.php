@@ -37,7 +37,9 @@ class CategoriesController extends Controller
     public function store(Request $request): RedirectResponse
     {
         /** @var Category $category */
-        $category = Category::create()->makeTranslation();
+        $category = Category::create([
+            'is_published' => $request->has('is_published'),
+        ])->makeTranslation();
 
         if ($request->hasFile('image')) {
             $category->addMediaFromRequest('image')
@@ -75,7 +77,7 @@ class CategoriesController extends Controller
             $category->slug = null;
             $category->update();
         }
-
+        $category->update(['is_published' => $request->has('is_published')]);
         $category->updateTranslation();
 
         if ($request->hasFile('image')) {

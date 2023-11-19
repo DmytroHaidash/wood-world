@@ -24,15 +24,21 @@
                             </fieldset>
                         @endforeach
                     </block-editor>
+                    @includeIf('partials.admin.meta', ['meta' => null])
                 </div>
-                @includeIf('partials.admin.meta', ['meta' => null])
+
                 <div class="col-md">
                     <image-uploader></image-uploader>
                 </div>
             </div>
 
-            <div class="mt-4">
+            <div class="d-flex align-items-center mt-4">
                 <button class="btn btn-primary">Сохранить</button>
+                <div class="custom-control custom-checkbox ml-3">
+                    <input type="checkbox" class="custom-control-input"
+                           id="published" name="is_published" checked>
+                    <label class="custom-control-label" for="published">Опубликовать</label>
+                </div>
             </div>
         </form>
     </section>

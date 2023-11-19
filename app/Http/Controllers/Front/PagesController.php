@@ -17,9 +17,9 @@ class PagesController extends Controller
     {
         $articles = Article::latest()->take(3)->get();
         $slides = optional(Slider::find(1))->slides;
-        $categories = Category::has('products')->inRandomOrder()->take(5)->get();
+        $categories = Category::has('products')->where('is_published', 1)->inRandomOrder()->take(5)->get();
         $about = Page::where('slug', 'about')->first();
-        $popular = Product::orderByDesc('views_count')->take(4)->get();
+        $popular = Product::orderByDesc('views_count')->where('is_published', 1)->take(4)->get();
         $meta = Page::where('slug', 'about')->first();
         return \view('app.pages.home', compact('articles', 'slides', 'categories', 'about', 'popular', 'meta'));
     }

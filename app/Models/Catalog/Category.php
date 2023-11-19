@@ -28,9 +28,10 @@ class Category extends Model implements HasMedia, Sortable
     ];
 
 	protected $fillable = [
-		'slug',
+        'slug',
+        'is_published',
         'sort_order'
-	];
+    ];
 
 	protected $filtrable = 'category';
 
