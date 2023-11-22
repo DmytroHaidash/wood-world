@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="h5">{{ $product->translate('title') }} №{{$product->id}}</h1>
+                    <h1 class="h5">{{ $product->translate('title') }}</h1>
 
                     <div class="position-relative mb-5">
                         <a href="{{ $product->banner }}">

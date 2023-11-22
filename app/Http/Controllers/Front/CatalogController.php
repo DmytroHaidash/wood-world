@@ -40,7 +40,7 @@ class CatalogController extends Controller
 		return \view('app.catalog.index', [
 			'page' => $this->page,
 			'search' => $request->input('search'),
-			'categories' => Category::get(),
+			'categories' => Category::where('is_published', 1)->get(),
 			'products' => $products->paginate(24),
 		]);
 	}
