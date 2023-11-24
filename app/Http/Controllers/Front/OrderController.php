@@ -33,7 +33,8 @@ class OrderController extends Controller
 
             $order = $product->orders()->create($attributes);
 
-            Mail::send(new OrderCreate($order));
+            Mail::send(new OrderCreate($order, config('app.admin_email')));
+            Mail::send(new OrderCreate($order, config('app.admin_email_2')));
         }
 
         session()->put('product', $product);

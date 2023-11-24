@@ -15,16 +15,18 @@ class OrderCreate extends Mailable
 	 * @var Order
 	 */
 	public $order;
+    public $email;
 
 	/**
 	 * Create a new message instance.
 	 *
 	 * @param Order $order
 	 */
-	public function __construct(Order $order)
-	{
-		$this->order = $order;
-	}
+    public function __construct(Order $order, $email)
+    {
+        $this->order = $order;
+        $this->email = $email;
+    }
 
 	/**
 	 * Build the message.
@@ -34,7 +36,7 @@ class OrderCreate extends Mailable
 	public function build()
 	{
 		return $this
-			->to(config('app.admin_email'))
+            ->to($this->email)
 			->subject('Заказ с сайта')
 			->view('mail.order');
 	}

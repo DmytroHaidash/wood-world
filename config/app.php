@@ -26,20 +26,21 @@ return [
 	|
 	*/
 
-	'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'production'),
 
-	'admin_email' => env('ADMIN_EMAIL', ''),
+    'admin_email' => env('ADMIN_EMAIL', ''),
+    'admin_email_2' => env('ADMIN_EMAIL_2', ''),
 
-	/*
-	|--------------------------------------------------------------------------
-	| Application Debug Mode
-	|--------------------------------------------------------------------------
-	|
-	| When your application is in debug mode, detailed error messages with
-	| stack traces will be shown on every error that occurs within your
-	| application. If disabled, a simple generic error page is shown.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Application Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | When your application is in debug mode, detailed error messages with
+    | stack traces will be shown on every error that occurs within your
+    | application. If disabled, a simple generic error page is shown.
+    |
+    */
 
 	'debug' => env('APP_DEBUG', false),
 

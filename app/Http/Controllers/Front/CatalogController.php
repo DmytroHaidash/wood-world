@@ -115,18 +115,19 @@ class CatalogController extends Controller
 	 */
 	public function question(Request $request, Product $product): RedirectResponse
 	{
-		$data = [
+        $data = [
             'user' => (object)$request->only('name', 'contact'),
             'phone' => $request->get('phone'),
             'message' => $request->input('message'),
         ];
-		Mail::send(new AskQuestion($data, $product));
+        Mail::send(new AskQuestion($data, $product, config('app.admin_email')));
+        Mail::send(new AskQuestion($data, $product, config('app.admin_email_2')));
 
-		session()->put('product', $product);
-		session()->put('message', 'pages.thanks.question');
+        session()->put('product', $product);
+        session()->put('message', 'pages.thanks.question');
 
-		return redirect()->route('app.thanks');
-	}
+        return redirect()->route('app.thanks');
+    }
 
 	public function pdf(Product $product)
     {
