@@ -26,24 +26,6 @@
                                  alt="{{ $product->translate('title') }}" data-fancybox="gallery"
                                  data-background-image="{{ $product->banner }}">
                         </a>
-
-                        @if($product->hasMedia('uploads'))
-                            <div class="mt-4">
-                                <h6>@lang('pages.product.all_photos')</h6>
-
-                                <div class="row no-gutters">
-                                    @foreach($product->getMedia('uploads')->slice(1) as $photo)
-                                        <div class="col-4 col-lg-3 ml-2 mb-2">
-                                            <a href="{{ $photo->getUrl('banner') }}"
-                                               data-fancybox="gallery"
-                                               class="product-item__gallery-item lozad"
-                                               data-background-image="{{$photo->getUrl('preview')}}">
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endif
                     </div>
                 </div>
 
@@ -89,7 +71,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="position-relative mb-5">
+                        @if($product->hasMedia('uploads'))
+                            <div class="mt-4">
+                                <h6>@lang('pages.product.all_photos')</h6>
 
+                                <div class="row no-gutters">
+                                    @foreach($product->getMedia('uploads')->slice(1) as $photo)
+                                        <div class="col-4 col-lg-3 ml-2 mb-2">
+                                            <a href="{{ $photo->getUrl('banner') }}"
+                                               data-fancybox="gallery"
+                                               class="product-item__gallery-item lozad"
+                                               data-background-image="{{$photo->getUrl('preview')}}">
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-12">
                     <div>
                         <p class="lead">{{ $product->translate('description') }}</p>
                         {!! $product->body !!}
