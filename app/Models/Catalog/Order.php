@@ -16,15 +16,16 @@ class Order extends Model
 	];
 
 	protected $fillable = [
-		'product_id',
-		'user_id',
-		'name',
-		'contact',
-		'message',
-		'comment',
-		'price',
-		'status',
-	];
+        'product_id',
+        'user_id',
+        'name',
+        'phone',
+        'contact',
+        'message',
+        'comment',
+        'price',
+        'status',
+    ];
 
 	/**
 	 * @return BelongsTo

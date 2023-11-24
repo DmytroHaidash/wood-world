@@ -24,7 +24,7 @@ class GroupSavingRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'uk.title' => 'required',
-		];
+            'en.title' => 'required',
+        ];
 	}
 }

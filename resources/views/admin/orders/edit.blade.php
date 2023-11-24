@@ -57,6 +57,7 @@
                             {{ $order->name }}
                         </h5>
                         <p>{{ $order->name }}</p>
+                        <p>{{ $order->phone }}</p>
                         <p class="mb-0">{{ $order->contact }}</p>
                     @endif
 

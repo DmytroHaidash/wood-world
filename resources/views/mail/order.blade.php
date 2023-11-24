@@ -1,9 +1,6 @@
 <h4>Заказчик:</h4>
-@if ($order->user)
-    <p>{{ $order->user->name }}, {{ $order->user->phone }} <{{ $order->user->email }}></p>
-@else
-    <p>{{ $order->name }}, {{ $order->contact }}</p>
-@endif
+
+<p>{{ $order->name }}, {{ $order->phone }}, {{ $order->contact }}</p>
 
 <h4>Товар:</h4>
 <p>

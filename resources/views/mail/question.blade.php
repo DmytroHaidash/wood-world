@@ -1,9 +1,6 @@
 <h4>Контакт:</h4>
-@if ($data->user instanceof \App\Models\User\User)
-    <p>{{ $data->user->name }}, {{ $data->user->phone }} <{{ $data->user->email }}></p>
-@else
-    <p>{{ $data->user->name }}, {{ $data->user->contact }}</p>
-@endif
+
+<p>{{ $data->user->name }}, {{ $data->phone }} {{ $data->user->contact }}</p>
 
 <h4>Товар:</h4>
 <p>

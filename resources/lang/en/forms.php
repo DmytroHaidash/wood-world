@@ -3,6 +3,7 @@
 return [
     'name' => 'Your name',
     'contact' => 'E-mail',
+    'phone' => 'Phone',
     'buttons' => [
         'buy' => 'Buy',
         'question' => 'Ask a question',

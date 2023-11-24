@@ -24,8 +24,8 @@ class TagSavingRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'uk.title' => 'required',
-			'group_id' => 'required',
-		];
+            'en.title' => 'required',
+            'group_id' => 'required',
+        ];
 	}
 }

@@ -14,42 +14,31 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
-	/**
-	 * Handle the incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request $request
-	 * @param Product $product
-	 * @return RedirectResponse
-	 */
-	public function __invoke(Request $request, Product $product): RedirectResponse
-	{
-		/** @var User $user */
-		$user = Auth::check() ? Auth::user() : null;
+    /**
+     * Handle the incoming request.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param Product $product
+     * @return RedirectResponse
+     */
+    public function __invoke(Request $request, Product $product): RedirectResponse
+    {
+        $exists = Order::where('contact', $request->get('contact'))
+            ->where('product_id', $product->id)
+            ->count();
 
-		if (Auth::check()) {
-			$exists = $user->orders()->where('product_id', $product->id)->count();
-		} else {
-			$exists = Order::where('contact', $request->get('contact'))
-						   ->where('product_id', $product->id)
-						   ->count();
-		}
+        if (!$exists) {
+            $attributes = $request->only('name', 'contact', 'phone', 'message');
+            $attributes['price'] = $product->price;
 
-		if (!$exists) {
-			$attributes = $request->only('name', 'contact', 'message');
-			$attributes['price'] = $product->price;
+            $order = $product->orders()->create($attributes);
 
-			if (Auth::check()) {
-				$attributes['user_id'] = Auth::user()->id;
-			}
+            Mail::send(new OrderCreate($order));
+        }
 
-			$order = $product->orders()->create($attributes);
+        session()->put('product', $product);
+        session()->put('message', 'pages.thanks.product.' . ($exists ? 'exists' : 'added'));
 
-			Mail::send(new OrderCreate($order));
-		}
-
-		session()->put('product', $product);
-		session()->put('message', 'pages.thanks.product.' . ($exists ? 'exists' : 'added'));
-
-		return redirect()->route('app.thanks');
-	}
+        return redirect()->route('app.thanks');
+    }
 }
