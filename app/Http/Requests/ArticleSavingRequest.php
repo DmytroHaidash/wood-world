@@ -25,7 +25,7 @@ class ArticleSavingRequest extends FormRequest
 	{
 		return [
             'en.title' => 'required',
-            'image' => 'image|max:2000',
+            'image' => 'max:2048',
         ];
 	}
 }
