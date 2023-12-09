@@ -17,6 +17,10 @@
             @else
                 <p>@lang(session()->get('message'))</p>
             @endif
+            <span>@lang('pages.thanks.description')</span>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <a href="{{route('app.home')}}" class="btn btn-outline-primary">@lang('pages.thanks.btn')</a>
         </div>
     </section>
 

@@ -31,14 +31,16 @@ return [
 	],
 
 	'thanks' => [
-		'title' => 'Thank You!',
-		'product' => [
-			'added' => 'Your purchase request for <strong>:product</strong> has been sent successfully. Expect to call our manager.',
-			'exists' => 'You have already added a request for <strong>:product.</strong> Expect to call our manager.',
-		],
-		'question' => 'Your question about <strong>:product</strong> has been submitted to the site administration.',
-		'subscribe' => 'Your address has been successfully added to our newsletter.',
-	],
+        'title' => 'Thank You!',
+        'description' => 'Manager will contact you soon!',
+        'product' => [
+            'added' => 'Your purchase request for <strong>:product</strong> has been sent successfully.',
+            'exists' => 'You have already added a request for <strong>:product.</strong>',
+        ],
+        'question' => 'Your question about <strong>:product</strong> has been submitted to the site administration.',
+        'subscribe' => 'Your address has been successfully added to our newsletter.',
+        'btn' => "To main page"
+    ],
 
 	'articles' => [
 		'title' => 'Articles',
