@@ -26,7 +26,7 @@ class SetLocale
 		}
 
 		if (app('router')->currentRouteNamed('admin.*')) {
-			app()->setLocale('uk');
+			app()->setLocale('en');
 		} else {
 			app()->setLocale($locale);
 		}
