@@ -41,10 +41,10 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}">
+                    <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }} d-none">
                         <label for="price">Цена ГРН</label>
-                        <input type="number" min="0.01" step="0.01" class="form-control" id="price" name="price"
-                               value="{{ old('price') }}" required>
+                        <input type="number" min="0" step="0.01" value="0" class="form-control" id="price" name="price"
+                               required>
                         @if($errors->has('price'))
                             <div class="mt-1 text-danger">
                                 {{ $errors->first('price') }}

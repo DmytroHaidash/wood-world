@@ -38,16 +38,16 @@
                         @endforeach
 
                         <multi-image-uploader
-                            class="mt-4"
-                            :src="{{ json_encode($product->images_list) }}"></multi-image-uploader>
+                                class="mt-4"
+                                :src="{{ json_encode($product->images_list) }}"></multi-image-uploader>
                     </block-editor>
                     @includeIf('partials.admin.meta', ['meta' => $product->meta()->first()])
                 </div>
 
                 <div class="col-lg-3">
-                    <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}">
+                    <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}  d-none">
                         <label for="price">Цена ГРН</label>
-                        <input type="number" min="0.01" step="0.01" class="form-control" id="price" name="price"
+                        <input type="number" min="0" step="0.01" class="form-control" id="price" name="price"
                                value="{{ old('price') ?? $product->price }}" required>
                         @if($errors->has('price'))
                             <div class="mt-1 text-danger">
