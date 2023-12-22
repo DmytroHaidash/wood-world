@@ -17,7 +17,7 @@ use function redirect;
 class ArticlesController extends Controller
 {
     /**
-     * @param  Request  $request
+     * @param Request $request
      * @return View
      */
     public function index(Request $request): View
@@ -58,7 +58,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @param  ArticleSavingRequest  $request
+     * @param ArticleSavingRequest $request
      * @return RedirectResponse
      */
     public function store(ArticleSavingRequest $request): RedirectResponse
@@ -78,17 +78,18 @@ class ArticlesController extends Controller
         }
 
         if ($request->has('meta')) {
-            foreach ($request->get('meta') as $key => $meta) {
-                $article->meta()->create([
-                    $key => $meta
-                ]);
-            }
+            $article->meta()->create([
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
+
         }
         return redirect()->route('admin.articles.edit', $article);
     }
 
     /**
-     * @param  Article  $article
+     * @param Article $article
      * @return View
      */
     public function edit(Article $article): View
@@ -101,8 +102,8 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @param  ArticleSavingRequest  $request
-     * @param  Article  $article
+     * @param ArticleSavingRequest $request
+     * @param Article $article
      * @return RedirectResponse
      */
     public function update(ArticleSavingRequest $request, Article $article): RedirectResponse
@@ -125,20 +126,20 @@ class ArticlesController extends Controller
                 ->toMediaCollection('articles');
         }
 
-        if($request->has('meta')){
-            foreach ($request->get('meta') as $key => $meta) {
-                $article->meta()->updateOrCreate([
-                    'metable_id' => $article->id
-                ], [
-                    $key => $meta
-                ]);
-            }
+        if ($request->has('meta')) {
+            $article->meta()->updateOrCreate([
+                'metable_id' => $article->id
+            ], [
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
         }
         return redirect()->route('admin.articles.edit', $article);
     }
 
     /**
-     * @param  Article  $article
+     * @param Article $article
      * @return RedirectResponse
      * @throws Exception
      */

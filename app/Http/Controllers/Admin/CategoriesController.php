@@ -47,11 +47,11 @@ class CategoriesController extends Controller
                 ->toMediaCollection('category');
         }
         if ($request->has('meta')) {
-            foreach ($request->get('meta') as $key => $meta) {
-                $category->meta()->create([
-                    $key => $meta
-                ]);
-            }
+            $category->meta()->create([
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
         }
 
         return redirect()->route('admin.categories.edit', $category);
@@ -87,14 +87,14 @@ class CategoriesController extends Controller
                 ->toMediaCollection('category');
         }
 
-        if($request->has('meta')){
-            foreach ($request->get('meta') as $key => $meta) {
-                $category->meta()->updateOrCreate([
-                    'metable_id' => $category->id
-                ], [
-                    $key => $meta
-                ]);
-            }
+        if($request->has('meta')) {
+            $category->meta()->updateOrCreate([
+                'metable_id' => $category->id
+            ], [
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
         }
         return redirect()->route('admin.categories.edit', $category);
     }

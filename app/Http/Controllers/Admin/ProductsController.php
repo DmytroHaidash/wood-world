@@ -21,7 +21,7 @@ use Spatie\MediaLibrary\Models\Media;
 class ProductsController extends Controller
 {
     /**
-     * @param  Request $request
+     * @param Request $request
      * @return View
      */
     public function index(Request $request): View
@@ -64,7 +64,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * @param  ProductSavingRequest $request
+     * @param ProductSavingRequest $request
      * @return RedirectResponse
      */
     public function store(ProductSavingRequest $request): RedirectResponse
@@ -111,18 +111,18 @@ class ProductsController extends Controller
                 Media::setNewOrder($request->input('accounting'));
             }
             if ($request->has('meta')) {
-                foreach ($request->get('meta') as $key => $meta) {
-                    $product->meta()->create([
-                        $key => $meta
-                    ]);
-                }
+                $product->meta()->create([
+                    'title' => $request->get('meta')['title'],
+                    'description' => $request->get('meta')['description'],
+                    'keywords' => $request->get('meta')['keywords']
+                ]);
             }
         }
         return redirect()->route('admin.products.edit', $product);
     }
 
     /**
-     * @param  Product $product
+     * @param Product $product
      * @return View
      */
     public function edit(Product $product): View
@@ -136,8 +136,8 @@ class ProductsController extends Controller
     }
 
     /**
-     * @param  ProductSavingRequest $request
-     * @param  Product $product
+     * @param ProductSavingRequest $request
+     * @param Product $product
      * @return RedirectResponse
      */
     public function update(ProductSavingRequest $request, Product $product): RedirectResponse
@@ -166,18 +166,18 @@ class ProductsController extends Controller
         }
 
         if ($request->has('accountings')) {
-            if($product->accountings){
-            $product->accountings->update([
-                'date' => $request['accountings']['date'],
-                'status_id' => $request['accountings']['status_id'],
-                'supplier_id' => $request['accountings']['supplier_id'],
-                'whom' => $request['accountings']['whom'],
-                'price' => json_encode($request['accountings']['price']),
-                'message' => json_encode($request['accountings']['message']),
-                'amount' => $request['accountings']['amount'],
-                'comment' => $request['accountings']['comment'],
-            ]);
-            }else{
+            if ($product->accountings) {
+                $product->accountings->update([
+                    'date' => $request['accountings']['date'],
+                    'status_id' => $request['accountings']['status_id'],
+                    'supplier_id' => $request['accountings']['supplier_id'],
+                    'whom' => $request['accountings']['whom'],
+                    'price' => json_encode($request['accountings']['price']),
+                    'message' => json_encode($request['accountings']['message']),
+                    'amount' => $request['accountings']['amount'],
+                    'comment' => $request['accountings']['comment'],
+                ]);
+            } else {
                 $product->accountings()->create([
                     'date' => $request['accountings']['date'],
                     'status' => $request['accountings']['status_id'],
@@ -198,14 +198,14 @@ class ProductsController extends Controller
                 }
                 Media::setNewOrder($request->input('accounting'));
             }
-            if($request->has('meta')){
-                foreach ($request->get('meta') as $key => $meta) {
-                    $product->meta()->updateOrCreate([
-                        'metable_id' => $product->id
-                    ], [
-                        $key => $meta
-                    ]);
-                }
+            if ($request->has('meta')) {
+                $product->meta()->updateOrCreate([
+                    'metable_id' => $product->id
+                ], [
+                    'title' => $request->get('meta')['title'],
+                    'description' => $request->get('meta')['description'],
+                    'keywords' => $request->get('meta')['keywords']
+                ]);
             }
         }
 
@@ -213,7 +213,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * @param  Product $product
+     * @param Product $product
      * @return RedirectResponse
      * @throws Exception
      */

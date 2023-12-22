@@ -21,7 +21,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @param  Page  $page
+     * @param Page $page
      * @return View
      */
     public function edit(Page $page): View
@@ -30,8 +30,8 @@ class PagesController extends Controller
     }
 
     /**
-     * @param  Request  $request
-     * @param  Page  $page
+     * @param Request $request
+     * @param Page $page
      * @return RedirectResponse
      */
     public function update(Request $request, Page $page): RedirectResponse
@@ -45,14 +45,14 @@ class PagesController extends Controller
                 ->toMediaCollection('pages');
         }
 
-        if($request->has('meta')){
-            foreach ($request->get('meta') as $key => $meta) {
-                $page->meta()->updateOrCreate([
-                    'metable_id' => $page->id
-                ], [
-                    $key => $meta
-                ]);
-            }
+        if ($request->has('meta')) {
+            $page->meta()->updateOrCreate([
+                'metable_id' => $page->id
+            ], [
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
         }
         return back();
     }
