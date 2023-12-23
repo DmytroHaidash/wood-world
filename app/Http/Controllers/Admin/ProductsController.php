@@ -101,22 +101,23 @@ class ProductsController extends Controller
                 'amount' => $request['accountings']['amount'],
                 'comment' => $request['accountings']['comment'],
             ]);
-            if ($request->has('accounting')) {
-                foreach ($request->accounting as $media) {
-                    Media::find($media)->update([
-                        'model_type' => Accounting::class,
-                        'model_id' => $product->accountings->id,
-                    ]);
-                }
-                Media::setNewOrder($request->input('accounting'));
-            }
-            if ($request->has('meta')) {
-                $product->meta()->create([
-                    'title' => $request->get('meta')['title'],
-                    'description' => $request->get('meta')['description'],
-                    'keywords' => $request->get('meta')['keywords']
+        }
+        if ($request->has('accounting')) {
+            foreach ($request->accounting as $media) {
+                Media::find($media)->update([
+                    'model_type' => Accounting::class,
+                    'model_id' => $product->accountings->id,
                 ]);
             }
+            Media::setNewOrder($request->input('accounting'));
+        }
+
+        if ($request->has('meta')) {
+            $product->meta()->create([
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
         }
         return redirect()->route('admin.products.edit', $product);
     }
@@ -189,26 +190,26 @@ class ProductsController extends Controller
                     'comment' => $request['accountings']['comment'],
                 ]);
             }
-            if ($request->has('accounting')) {
-                foreach ($request->accounting as $media) {
-                    Media::find($media)->update([
-                        'model_type' => Accounting::class,
-                        'model_id' => $product->accountings->id,
-                    ]);
-                }
-                Media::setNewOrder($request->input('accounting'));
-            }
-            if ($request->has('meta')) {
-                $product->meta()->updateOrCreate([
-                    'metable_id' => $product->id
-                ], [
-                    'title' => $request->get('meta')['title'],
-                    'description' => $request->get('meta')['description'],
-                    'keywords' => $request->get('meta')['keywords']
-                ]);
-            }
         }
 
+        if ($request->has('accounting')) {
+            foreach ($request->accounting as $media) {
+                Media::find($media)->update([
+                    'model_type' => Accounting::class,
+                    'model_id' => $product->accountings->id,
+                ]);
+            }
+            Media::setNewOrder($request->input('accounting'));
+        }
+        if ($request->has('meta')) {
+            $product->meta()->updateOrCreate([
+                'metable_id' => $product->id
+            ], [
+                'title' => $request->get('meta')['title'],
+                'description' => $request->get('meta')['description'],
+                'keywords' => $request->get('meta')['keywords']
+            ]);
+        }
         return redirect()->route('admin.products.edit', $product);
     }
 
